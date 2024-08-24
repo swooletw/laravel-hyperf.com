@@ -28,7 +28,7 @@ export default defineUserConfig({
 
     docsRepo: 'swooletw/laravel-hyperf.com',
 
-    docsBranch: 'main',
+    docsBranch: 'master',
 
     navbar: [
       '/',
