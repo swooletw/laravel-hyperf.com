@@ -54,6 +54,8 @@ The benchmark tests cover two distinct scenarios to evaluate performance under d
    - Respond with `hello world` after the delay
    - Tests performance under I/O-bound conditions
 
+> worker numbers are configured by default (as CPU cores)
+
 Test Environment Specifications:
 - Hardware: Apple M1 Pro 2021
 - CPU: 8 cores
@@ -158,16 +160,18 @@ Transfer/sec:      1.66KB
 * Laravel Hyperf
 
 ```text:no-line-numbers
-Running 10s test @ http://127.0.0.1:9501/api
-  6 threads and 1800 connections
+Running 10s test @ http://10.10.4.12:9501/api
+  16 threads and 8000 connections
   Thread Stats   Avg      Stdev     Max   +/- Stdev
-    Latency     1.00s     7.55ms   1.27s    94.97%
-    Req/Sec   359.42    339.44     1.29k    80.15%
-  16199 requests in 10.11s, 3.12MB read
-  Socket errors: connect 0, read 13984, write 0, timeout 0
-Requests/sec:   1602.87
-Transfer/sec:    316.19KB
+    Latency     1.04s   114.24ms   2.00s    97.34%
+    Req/Sec   549.72    521.39     2.90k    78.28%
+  63648 requests in 10.05s, 11.53MB read
+  Socket errors: connect 0, read 0, write 0, timeout 552
+Requests/sec:   6332.42
+Transfer/sec:      1.15MB
 ```
+
+> In this case I run wrk in another machine to make sure wrk can use as much resource for keeping more connections.
 
 ::: chart
 
@@ -186,7 +190,7 @@ Transfer/sec:    316.19KB
       },
       {
         "label": "Laravel Hyperf",
-        "data": [1602.87],
+        "data": [6332.42],
         "backgroundColor": "rgba(173, 216, 230, 0.8)",
         "borderColor": "rgba(173, 216, 230, 1)",
         "borderWidth": 1
@@ -222,5 +226,5 @@ Transfer/sec:    316.19KB
 :::
 
 ::: note
-The QPS results for Laravel Hyperf have little difference between 1 worker and 8 workers configurations. Both configurations achieve approximately 1600 QPS. There might be some imitations in the benchmarking tool or methodology. In real cases Laravel Hyperf should have much better performance.
+The QPS results for Laravel Hyperf have little difference between 1 worker and 8 workers configurations. Both configurations achieve approximately 6300 QPS. That means there's limitation in the benchmarking environment. In real cases Laravel Hyperf should have much better performance.
 :::
