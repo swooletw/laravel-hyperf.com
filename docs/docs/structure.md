@@ -16,7 +16,6 @@ Here's how you directory structure looks like:
 │   │   ├── Middleware
 │   │   └── Requests
 │   ├── Listeners
-│   ├── Model
 │   ├── Models
 │   └── Providers
 ├── bin
