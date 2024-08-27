@@ -437,7 +437,7 @@ $request->whenFilled('name', function (string $input) {
 
 To determine if a given key is absent from the request, you may use the `missing` and `whenMissing` methods:
 
-``php
+```php
 if ($request->missing('name')) {
     // ...
 }
