@@ -18,7 +18,7 @@ To ensure backward compatibility and support Laravel-style middleware, Laravel H
 This flexibility allows developers to choose the middleware style that best suits their needs or gradually migrate from Laravel-style to PSR-15 middleware as needed. When defining middleware in your application, you can mix and match these two types without conflict. Laravel Hyperf will handle the appropriate execution of each middleware type internally.
 
 ::: important
-In Hyperf, `Psr\Http\Message\ServerRequestInterface` will be injected into `process` function in the middleware. However, in Laravel Hyperf, for consistency with requests in controllers, `SwooleTW\Hyperf\Http\Contracts\Request` will be the alternative. This interface extends `Psr\Http\Message\ServerRequestInterface` and provides many useful functions like in Laravel. For more details, you can see: [requests](/docs/requests.html).
+In Hyperf, `Psr\Http\Message\ServerRequestInterface` will be injected into `process` function in the middleware. However, in Laravel Hyperf, for consistency with requests in controllers, `SwooleTW\Hyperf\Http\Contracts\RequestContract` will be the alternative. This interface extends `Psr\Http\Message\ServerRequestInterface` and provides many useful functions like in Laravel. For more details, you can see: [requests](/docs/requests.html).
 :::
 
 ## Defining a Hyperf Middleware
