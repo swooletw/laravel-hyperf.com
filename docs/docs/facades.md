@@ -192,8 +192,8 @@ Lang  |  Hyperf\Contract\TranslatorLoaderInterface  |  `translator`
 Log  |  Psr\Log\LoggerInterface  |  `log`
 RateLimiter  |  SwooleTW\Hyperf\Cache\RateLimiter  |  &nbsp;
 Redis  |  Hyperf\Redis\Redis  |  `redis`
-Request  |  Hyperf\HttpServer\Contract\RequestInterface  |  `request`
-Response  |  Hyperf\HttpServer\Contract\ResponseInterface  |  &nbsp;
+Request  |  SwooleTW\Hyperf\Http\Contracts\RequestContract  |  `request`
+Response  |  SwooleTW\Hyperf\Http\Contracts\ResponseContract  |  `response`
 Route  |  SwooleTW\Hyperf\Router\Router  |  `router`
 URL  |  SwooleTW\Hyperf\Router\UrlGenerator  |  `url`
 Validator  |  Hyperf\Validation\Contract\ValidatorFactoryInterface  |  `validator`
