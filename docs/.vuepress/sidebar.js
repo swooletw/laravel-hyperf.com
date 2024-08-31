@@ -73,6 +73,10 @@ export const sidebarConfig = ({
                             link: 'responses',
                         },
                         {
+                            text: 'Views',
+                            link: 'views',
+                        },
+                        {
                             text: 'Blade Templates',
                             link: 'blade',
                         },

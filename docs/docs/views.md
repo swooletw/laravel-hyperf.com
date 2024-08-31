@@ -6,7 +6,7 @@ Views separate your controller / application logic from your presentation logic 
 
 When using Laravel Hyperf, view templates are usually written using the [Blade templating language](/docs/blade.html). A simple view might look something like this:
 
-```blade
+```html
 <!-- View stored in resources/views/greeting.blade.php -->
 
 <html>
