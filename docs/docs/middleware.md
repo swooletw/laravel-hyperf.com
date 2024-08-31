@@ -17,8 +17,10 @@ To ensure backward compatibility and support Laravel-style middleware, Laravel H
 
 This flexibility allows developers to choose the middleware style that best suits their needs or gradually migrate from Laravel-style to PSR-15 middleware as needed. When defining middleware in your application, you can mix and match these two types without conflict. Laravel Hyperf will handle the appropriate execution of each middleware type internally.
 
-::: important
-In Hyperf, `Psr\Http\Message\ServerRequestInterface` will be injected into `process` function in the middleware. However, in Laravel Hyperf, for consistency with requests in controllers, `SwooleTW\Hyperf\Http\Contracts\RequestContract` will be the alternative. This interface extends `Psr\Http\Message\ServerRequestInterface` and provides many useful functions like in Laravel. For more details, you can see: [requests](/docs/requests.html).
+::: tip
+For compatibility with middleware in Hyperf, the `request` you get in the middleware is a `Psr\Http\Message\ServerRequestInterface` object. If you want to use `SwooleTW\Hyperf\Http\Request` within the middleware, you can get it by `SwooleTW\Hyperf\Support\Facades\Request` or calling `request()` global helper function.
+
+`SwooleTW\Hyperf\Http\Request` implements `Psr\Http\Message\ServerRequestInterface` and provides many other useful functions like in Laravel. For more details, you can see: [requests](/docs/requests.html).
 :::
 
 ## Defining a Hyperf Middleware
@@ -68,12 +70,13 @@ $response = $response->withHeader('X-Header', 'Value');
 In this case, `$response` is now a new object, not a modification of the original one. However, Hyperf provides a way to override these objects using context. This allows you to maintain the PSR-7 compliance while still providing a way to modify the request and response objects when necessary.
 
 ```php
+use Hyperf\Context\Context;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 
 // $request and $response are the modified objects
-$request = \Hyperf\Context\Context::set(ServerRequestInterface::class, $request);
-$response = \Hyperf\Context\Context::set(ResponseInterface::class, $response);
+$request = Context::set(ServerRequestInterface::class, $request);
+$response = Context::set(ResponseInterface::class, $response);
 ```
 
 ::: tip

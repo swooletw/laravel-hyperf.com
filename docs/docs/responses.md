@@ -24,7 +24,7 @@ Did you know you can also return [Eloquent collections](/docs/eloquent-collectio
 
 #### Response Objects
 
-Typically, you won't just be returning simple strings or arrays from your route actions. Instead, you will be returning full `Hyperf\HttpMessage\Server\Response` instances or [views](/docs/views).
+Typically, you won't just be returning simple strings or arrays from your route actions. Instead, you will be returning full `SwooleTW\Hyperf\Http\Response` instances or [views](/docs/views.html).
 
 Returning a full `Response` instance allows you to customize the response's HTTP status code and headers. A `Response` instance inherits from the `SwooleTW\Hyperf\Http\Response` class, which provides a variety of methods for building HTTP responses:
 
