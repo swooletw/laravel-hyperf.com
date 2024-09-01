@@ -163,10 +163,6 @@ class RequestServiceProvider extends ServiceProvider
 }
 ```
 
-::: info
-Request has macroable so it could actually extend functions at any moment. The code above is just for demonstration.
-:::
-
 #### Boot Method Dependency Injection
 
 You may type-hint dependencies for your service provider's `boot` method. The [service container](/docs/container.html) will automatically inject any dependencies you need:
