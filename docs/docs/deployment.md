@@ -8,7 +8,7 @@ The Laravel Hyperf framework has a few system requirements. You should ensure th
 
  - PHP >= 8.1
  - Any of the following network engines
-   - [Swoole PHP extension](https://github.com/swoole/swoole-src) >= 5.0, with `swoole.use_shortname` set to `Off` in your `php.ini`
+   - [Swoole PHP extension](https://github.com/swoole/swoole-src) >= 5.0
    - [Swow PHP extension](https://github.com/swow/swow) >= 1.4
  - JSON PHP extension
  - Pcntl PHP extension (Only on Swoole engine)
@@ -16,6 +16,10 @@ The Laravel Hyperf framework has a few system requirements. You should ensure th
  - PDO PHP extension (If you need to use the MySQL Client)
  - Redis PHP extension (If you need to use the Redis Client)
  - Protobuf PHP extension (If you need to use the gRPC Server or Client)
+
+::: note
+If you've installed `hyperf/polyfill-coroutine` package, you must set `swoole.use_shortname` to `Off` in your `php.ini` file.
+:::
 
 ### Docker
 

@@ -18,7 +18,7 @@ To ensure backward compatibility and support Laravel-style middleware, Laravel H
 This flexibility allows developers to choose the middleware style that best suits their needs or gradually migrate from Laravel-style to PSR-15 middleware as needed. When defining middleware in your application, you can mix and match these two types without conflict. Laravel Hyperf will handle the appropriate execution of each middleware type internally.
 
 ::: tip
-For compatibility with middleware in Hyperf, the `request` you get in the middleware is a `Psr\Http\Message\ServerRequestInterface` object. If you want to use `SwooleTW\Hyperf\Http\Request` within the middleware, you can get it by `SwooleTW\Hyperf\Support\Facades\Request` or calling `request()` global helper function.
+For compatibility with middleware in Hyperf, the `request` you get in the middleware is a `Psr\Http\Message\ServerRequestInterface` object, which only implements basic PSR-7 methods. If you want to use `SwooleTW\Hyperf\Http\Request` within the middleware, you can get it by fetching `SwooleTW\Hyperf\Http\Request` from the container, using `SwooleTW\Hyperf\Support\Facades\Request` facade or calling `request()` global helper function.
 
 `SwooleTW\Hyperf\Http\Request` implements `Psr\Http\Message\ServerRequestInterface` and provides many other useful functions like in Laravel. For more details, you can see: [requests](/docs/requests.html).
 :::

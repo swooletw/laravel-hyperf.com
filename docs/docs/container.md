@@ -45,7 +45,7 @@ A deep understanding of the Laravel Hyperf service container is essential to bui
 
 To ensure compatibility with the Hyperf Container, there are some important differences you need to be aware of:
 
-* Unlike Laravel, every binding in the Hyperf Container is a `singleton`. You need to ensure that every instance can be shared across different requests and coroutines. **Do not store states in the objects!** Instead, use [Context](/docs/context.html) if you need to maintain states within objects.
+* Different from Laravel, every binding in the Hyperf Container is a `singleton`. You need to ensure that every instance can be shared across different requests and coroutines. **Do not store states in the objects!** Instead, use [Context](/docs/context.html) if you need to maintain states within objects.
 
 * If you need to get a new instance rather than fetching the same singleton object from the container, you can use the `make` function. This will initiate a new object and inject related dependencies (note that these dependencies are still singletons).
 
@@ -81,7 +81,7 @@ Thankfully, many of the classes you will be writing when building a Laravel Hype
 Thanks to zero configuration resolution, you will often type-hint dependencies on routes, controllers, event listeners, and elsewhere without ever manually interacting with the container. For example, you might type-hint the `Hyperf\HttpServer\Request` object on your route definition so that you can easily access the current request. Even though we never have to interact with the container to write this code, it is managing the injection of these dependencies behind the scenes:
 
 ```php
-use Illuminate\Http\Request;
+use SwooleTW\Hyperf\Http\Request;
 
 Route::get('/', function (Request $request) {
     // ...
@@ -118,8 +118,8 @@ As mentioned, you will typically be interacting with the container within servic
 
 ```php
 use App\Services\Transistor;
-use Illuminate\Contracts\Foundation\Application;
-use Illuminate\Support\Facades\App;
+use SwooleTW\Hyperf\Foundation\Contracts\Application;
+use SwooleTW\Hyperf\Support\Facades\App;
 
 App::bind(Transistor::class, function (Application $app) {
     // ...
@@ -347,7 +347,7 @@ The service container fires an event each time it resolves an object. You may li
 
 ```php
 use App\Services\Transistor;
-use Illuminate\Contracts\Foundation\Application;
+use SwooleTW\Hyperf\Foundation\Contracts\Application;
 
 $this->app->resolving(Transistor::class, function (Transistor $transistor, Application $app) {
     // Called when container resolves objects of type "Transistor"...

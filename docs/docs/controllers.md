@@ -109,14 +109,14 @@ class UserController extends Controller
 
 #### Method Injection
 
-In addition to constructor injection, you may also type-hint dependencies on your controller's methods. A common use-case for method injection is injecting the `Hyperf\HttpServer\Request` instance into your controller methods:
+In addition to constructor injection, you may also type-hint dependencies on your controller's methods. A common use-case for method injection is injecting the `SwooleTW\Hyperf\Http\Request` instance into your controller methods:
 
 ```php
 <?php
 
 namespace App\Http\Controllers;
 
-use Hyperf\HttpServer\Request;
+use SwooleTW\Hyperf\Http\Request;
 
 class UserController extends Controller
 {
@@ -142,14 +142,14 @@ use App\Http\Controllers\UserController;
 Route::put('/user/{id}', [UserController::class, 'update']);
 ```
 
-You may still type-hint the `Hyperf\HttpServer\Request` and access your `id` parameter by defining your controller method as follows:
+You may still type-hint the `SwooleTW\Hyperf\Http\Request` and access your `id` parameter by defining your controller method as follows:
 
 ```php
 <?php
 
 namespace App\Http\Controllers;
 
-use Hyperf\HttpServer\Request;
+use SwooleTW\Hyperf\Http\Request;
 
 class UserController extends Controller
 {

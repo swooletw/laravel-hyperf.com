@@ -89,8 +89,8 @@ The `web.php` file contains routes that serves common requests such as views, fi
 
 The `api.php` file contains routes that are intended to be stateless, so requests entering the application through these routes are intended to be authenticated and will not have access to session state.
 
-::: tip
-Middleware groups are not applied to `web.php` and `api.php`. You can set them manually if in need.
+::: info
+Middleware groups are applied to `web.php` and `api.php`, but are kept in empty by default. You can configure them manually if in need.
 :::
 
 The `console.php` file is where you may define all of your closure based console commands. Each closure is bound to a command instance allowing a simple approach to interacting with each command's IO methods. Even though this file does not define HTTP routes, it defines console based entry points (routes) into your application. You may also [schedule](/docs/scheduling.html) tasks in the `console.php` file.
