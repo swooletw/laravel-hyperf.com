@@ -485,16 +485,18 @@ Blade also allows you to define comments in your views. However, unlike HTML com
 
 Components and slots provide similar benefits to sections, layouts, and includes; however, some may find the mental model of components and slots easier to understand. There are two approaches to writing components: class based components and anonymous components.
 
-To create a class based component, you may create a class which extends `Hyperf\ViewEngine\Component\Component::class` and implement the `render` method. To illustrate how to use components, we will create a simple `Alert` component:
+To create a class based component, you may use the `make:component` Artisan command. To illustrate how to use components, we will create a simple Alert component. The make:component command will place the component in the `app/View/Components` directory:
 
-> You can put the components in the `app/View/Components` directory.
+```shell:no-line-numbers
+php artisan make:component Alert
+```
 
 ```php
 <?php
 namespace App\View\Component;
 
 use Hyperf\ViewEngine\Component\Component;
-use function Hyperf\ViewEngine\view;
+use SwooleTW\Hyperf\Support\Facades\View;
 
 class Alert extends Component
 {
@@ -508,7 +510,7 @@ class Alert extends Component
     }
     public function render()
     {
-        return view('components.alert');
+        return View::make('components.alert');
     }
 }
 ```

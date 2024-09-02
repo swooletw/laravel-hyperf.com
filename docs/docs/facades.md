@@ -174,6 +174,7 @@ Below you will find every facade and its underlying class. This is a useful tool
 Facade  |  Class  |  Service Container Binding
 ------------- | ------------- | -------------
 App  |  SwooleTW\Hyperf\Foundation\Application  |  `app`
+Blade  |  Hyperf\ViewEngine\Compiler\CompilerInterface  |  `blade.compiler`
 Artisan  |  SwooleTW\Hyperf\Foundation\Console\Contracts\Kernel  |  `artisan`
 Auth  |  SwooleTW\Hyperf\Auth\AuthManager  |  `auth`
 Auth (Instance)  |  SwooleTW\Hyperf\Auth\Contracts\Guard  |  `auth.driver`
