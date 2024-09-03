@@ -26,6 +26,9 @@ echo url()->current();
 
 // Get the current URL including the query string...
 echo url()->full();
+
+// Get the full URL for the previous request...
+echo url()->previous();
 ```
 
 Each of these methods may also be accessed via the `URL` [facade](/docs/facades.html):
