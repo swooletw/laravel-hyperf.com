@@ -336,7 +336,7 @@ $request->name = 'Foo';
 $request->name;
 ```
 
-::: note
+::: important
 You won't get `name`'s value via `$request->input('name')`.
 :::
 

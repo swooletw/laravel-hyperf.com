@@ -267,7 +267,7 @@ In addition to conditional statements, Blade provides simple directives for work
 @endwhile
 ```
 
-::: warning
+::: important
 While iterating through a `foreach` loop, you may use the [loop variable](#the-loop-variable) to gain valuable information about the loop, such as whether you are in the first or last iteration through the loop.
 :::
 
@@ -1119,7 +1119,7 @@ Sometimes you may need to render a component but not know which component should
 
 ### Manually Registering Components
 
-::: warning
+::: important
 The following documentation on manually registering components is primarily applicable to those who are writing Laravel Hyperf packages that include view components. If you are not writing a package, this portion of the component documentation may not be relevant to you.
 :::
 
@@ -1547,7 +1547,7 @@ As you can see, we will chain the `format` method onto whatever expression is pa
 <?php echo ($var)->format('m/d/Y H:i'); ?>
 ```
 
-::: warning
+::: important
 After updating the logic of a Blade directive, you will need to delete all of the cached Blade views.
 :::
 

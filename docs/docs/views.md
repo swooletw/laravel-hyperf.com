@@ -185,7 +185,7 @@ class ViewServiceProvider extends ServiceProvider
 }
 ```
 
-::: warning
+::: important
 Remember, if you create a new service provider to contain your view composer registrations, you will need to add the service provider to the `providers` array in the `config/app.php` configuration file.
 :::
 

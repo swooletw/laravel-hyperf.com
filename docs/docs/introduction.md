@@ -54,7 +54,7 @@ The benchmark tests cover two distinct scenarios to evaluate performance under d
    - Respond with `hello world` after the delay
    - Tests performance under I/O-bound conditions
 
-> worker numbers are configured by default (as CPU cores)
+> worker numbers are configured as CPU cores by default
 
 Test Environment Specifications:
 - Hardware: Apple M1 Pro 2021
