@@ -265,6 +265,6 @@ The cache is stored in the `storage/framework/views` directory by default. You c
 ```php
 'config' => [
     //...
-    'cache_path' => BASE_PATH . '/storage/framework/views/',
+    'cache_path' => storage_path('framework/views'),
 ],
 ```

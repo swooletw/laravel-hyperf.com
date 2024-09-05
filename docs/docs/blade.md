@@ -1611,16 +1611,3 @@ Once the custom conditional has been defined, you can use it within your templat
     <!-- The application is not using the local disk... -->
 @enddisk
 ```
-
-### Optional Middleware
-
-There are some features that are not enabled by default in Laravel Hyperf. If you need these features, you can add them via following middleware:
-
-* Share errors in session to views
-```php
-Hyperf\ViewEngine\Http\Middleware\ShareErrorsFromSession::class
-```
-* Capture validation errors in session to views
-```php
-Hyperf\ViewEngine\Http\Middleware\ValidationExceptionHandle::class
-```
