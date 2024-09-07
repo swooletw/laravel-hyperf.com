@@ -22,6 +22,10 @@ The session `driver` configuration option defines where session data will be sto
 - `database` - sessions are stored in a relational database.
 - `redis` - sessions are stored in redis, a fast and cache based store.
 
+::: important
+Before using session, you need to enable the `Hyperf\Session\Middleware\SessionMiddleware` middleware in `Kernel.php`.
+:::
+
 ### Driver Prerequisites
 
 #### Database

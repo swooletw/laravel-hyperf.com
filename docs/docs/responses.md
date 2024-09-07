@@ -149,7 +149,7 @@ The `json` method will automatically set the `Content-Type` header to `applicati
 return response()->json([
     'name' => 'Abigail',
     'state' => 'CA',
-]);
+], 200, ['X-Header-One' => 'Header Value']);
 ```
 
 ### File Downloads
