@@ -10,7 +10,6 @@ Here's how you directory structure looks like:
 │   │   └── Commands
 │   ├── Events
 │   ├── Exceptions
-│   │   └── Handlers
 │   ├── Http
 │   │   ├── Controllers
 │   │   ├── Middleware
@@ -130,13 +129,9 @@ The `Console` directory contains all of the custom Hyperf commands for your appl
 
 The `Events` directory houses [event classes](/docs/events.html). Events may be used to alert other parts of your application that a given action has occurred, providing a great deal of flexibility and decoupling.
 
-#### The Exceptions Directory
+#### The Exception Directory
 
-The `Exceptions` directory is a good place to place any exceptions thrown by your application. Also, there's a `Handlers` directory to keep your application's exception handlers. If you would like to customize how your exceptions are logged or rendered, you should modify the `ApiExceptionHandler` class in this directory.
-
-::: note
-Exception handlers in Hyperf is chainable. You can design multiple exception handlers for different responsibilities for your application.
-:::
+The `Exceptions` directory contains your application's exception handler and is also a good place to place any exceptions thrown by your application. If you would like to customize how your exceptions are logged or rendered, you should modify the Handler class in this directory.
 
 #### The Http Directory
 
