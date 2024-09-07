@@ -3,7 +3,7 @@
 When you start a new Laravel Hyperf project, error and exception handling is already configured for you. The `App\Exceptions\Handler` class is where all exceptions thrown by your application are logged and then rendered to the user. We'll dive deeper into this class throughout this documentation.
 
 ::: info
-`App\Exceptions\Handler` is built on top of [Hyperf's ExceptionHandler](https://hyperf.wiki/#/en/exception-handler). Laravel Hyperf extends Hyperf's exception handler to migrate the most of features from Laravel's exception handler.
+`App\Exceptions\Handler` is built on top of [Hyperf's ExceptionHandler](https://hyperf.wiki/#/en/exception-handler). Laravel Hyperf migrates the most of error handling features from Laravel.
 :::
 
 ## Configuration
@@ -140,7 +140,7 @@ If you would like to ensure that a single instance of an exception is only ever 
 ```php
 namespace App\Exceptions;
 
-use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use SwooleTW\Hyperf\Foundation\Exceptions\Handler as ExceptionHandler;
 
 class Handler extends ExceptionHandler
 {
@@ -235,7 +235,7 @@ The closure passed to the `renderable` method should return an instance of `Psr\
 
 ```php
 use App\Exceptions\InvalidOrderException;
-use Illuminate\Http\Request;
+use SwooleTW\Hyperf\Http\Request;
 
 /**
  * Register the exception handling callbacks for the application.
@@ -325,8 +325,8 @@ Instead of defining custom reporting and rendering behavior in your exception ha
 namespace App\Exceptions;
 
 use Exception;
-use Illuminate\Http\Request;
-use Illuminate\Http\Response;
+use SwooleTW\Hyperf\Http\Request;
+use Psr\Http\Message\ResponseInterface;
 
 class InvalidOrderException extends Exception
 {
@@ -341,7 +341,7 @@ class InvalidOrderException extends Exception
     /**
      * Render the exception into an HTTP response.
      */
-    public function render(Request $request): Response
+    public function render(Request $request): ResponseInterface
     {
         return response(/* ... */);
     }
@@ -410,7 +410,11 @@ You may also define a "fallback" error page for a given series of HTTP status co
 
 ## Whoops Exception Renderer
 
-You can use [Whoops](https://github.com/filp/whoops) as an alternative exception renderer in debug mode. You can bind your own renderer to the `SwooleTW\Hyperf\Foundation\Exceptions\Contracts\ExceptionRenderer` contract in your `AppServiceProvider` class.
+Laravel Hyperf has a simple built-in HTML error page renderer for debugging. You can choose to use [Whoops](https://github.com/filp/whoops) as an alternative renderer.
+
+![Whoops](/images/whoops.png)
+
+Before enabling whoops error handler, make sure you've installed `filp/whoops` package in your project, and bind Whoops renderer in the service provider.
 
 ```php
 $this->app->bind(
