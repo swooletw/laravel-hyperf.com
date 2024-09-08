@@ -66,18 +66,18 @@ You can catch the validation exception and handle it in your [error handler](/do
 To get a better understanding of the `validate` method, let's jump back into the `store` method:
 
 ```php
-    /**
-     * Store a new blog post.
-     */
-    public function store(Request $request)
-    {
-        $validated = $request->validate([
-            'title' => 'required|unique:posts|max:255',
-            'body' => 'required',
-        ]);
+/**
+ * Store a new blog post.
+ */
+public function store(Request $request)
+{
+    $validated = $request->validate([
+        'title' => 'required|unique:posts|max:255',
+        'body' => 'required',
+    ]);
 
-        // The blog post is valid...
-    }
+    // The blog post is valid...
+}
 ```
 
 As you can see, the validation rules are passed into the `validate` method. Don't worry - all available validation rules are [documented](#available-validation-rules). Again, if the validation fails, the proper response will automatically be generated. If the validation passes, our controller will continue executing normally.
