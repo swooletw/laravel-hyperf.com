@@ -1,3 +1,6 @@
+# Routing
+[[toc]]
+
 ## Basic Routing
 
 The most basic Laravel Hyperf routes accept a URI and a closure, providing a very simple and expressive method of defining routes and behavior without complicated routing configuration files:

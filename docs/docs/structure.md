@@ -1,4 +1,7 @@
-# Introduction
+# Directory Structure
+[[toc]]
+
+## Introduction
 
 The default Laravel Hyperf application structure follows by Laravel. It can provide you a great starting point for both large and small applications. You're free to organize your application however you like. But some directories such as `bootstrap`, `config`, `database` and `runtime` should remain due to the core design in Hyperf.
 

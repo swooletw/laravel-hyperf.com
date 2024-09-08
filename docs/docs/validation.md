@@ -1,3 +1,6 @@
+# Validation
+[[toc]]
+
 ## Introduction
 
 Laravel Hyperf provides several different approaches to validate your application's incoming data. It is most common to use the `validate` method available on all incoming HTTP requests. However, we will discuss other approaches to validation as well.

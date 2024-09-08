@@ -1,3 +1,6 @@
+# Requests
+[[toc]]
+
 ## Introduction
 
 Laravel Hyperf's `SwooleTW\Hyperf\Http\Request` class provides an object-oriented way to interact with the current HTTP request being handled by your application as well as retrieve the input, cookies, and files that were submitted with the request.

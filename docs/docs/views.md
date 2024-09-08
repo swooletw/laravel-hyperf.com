@@ -1,3 +1,6 @@
+# Views
+[[toc]]
+
 ## Introduction
 
 Of course, it's not practical to return entire HTML documents strings directly from your routes and controllers. Thankfully, views provide a convenient way to place all of our HTML in separate files.

@@ -1,3 +1,6 @@
+# Installation
+[[toc]]
+
 ## Creating a Laravel Hyperf Project
 
 Before creating your first Laravel Hyperf project, make sure that your local machine has [Composer](https://getcomposer.org/) installed for dependencies management, and the Swoole PHP extension must be installed as well. Typically, this can be done via PECL:

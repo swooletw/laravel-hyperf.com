@@ -1,3 +1,6 @@
+# Responses
+[[toc]]
+
 ## Creating Responses
 
 #### Strings and Arrays

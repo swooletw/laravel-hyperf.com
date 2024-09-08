@@ -1,3 +1,6 @@
+# Facades
+[[toc]]
+
 ## Introduction
 
 Throughout the Laravel Hyperf documentation, you will see examples of code that interacts with Laravel Hyperf's features via "facades". Facades provide a "static" interface to classes that are available in the application's [service container](/docs/container.html). Laravel ships with many facades which provide access to almost all of Laravel Hyperf's features.

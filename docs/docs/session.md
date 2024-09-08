@@ -1,3 +1,6 @@
+# Session
+[[toc]]
+
 ## Introduction
 
 Since HTTP driven applications are stateless, sessions provide a way to store information about the user across multiple requests. That user information is typically placed in a persistent store / backend that can be accessed from subsequent requests.

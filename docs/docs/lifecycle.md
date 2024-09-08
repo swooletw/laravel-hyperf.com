@@ -1,3 +1,6 @@
+# Lifecycle
+[[toc]]
+
 ## Introduction
 
 When using any tool in the "real world", you feel more confident if you understand how that tool works. Application development is no different. When you understand how your development tools function, you feel more comfortable and confident using them.

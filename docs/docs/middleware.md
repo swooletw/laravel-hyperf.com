@@ -1,3 +1,6 @@
+# Middleware
+[[toc]]
+
 ## Introduction
 
 Middleware provide a convenient mechanism for inspecting and filtering HTTP requests entering your application. For example, Laravel Hyperf includes a middleware that verifies the user of your application is authenticated. If the user is not authenticated, the middleware will throw `SwooleTW\Hyperf\Auth\AuthenticationException`. However, if the user is authenticated, the middleware will allow the request to proceed further into the application.

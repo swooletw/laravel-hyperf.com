@@ -1,3 +1,6 @@
+# URL Generation
+[[toc]]
+
 ## Introduction
 
 Laravel Hyperf provides several helpers to assist you in generating URLs for your application. These helpers are primarily helpful when building links in your templates and API responses, or when generating redirect responses to another part of your application.
