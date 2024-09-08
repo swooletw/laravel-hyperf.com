@@ -21,7 +21,7 @@ echo url("/posts/{$post->id}");
 
 ### Accessing the Current URL
 
-If no path is provided to the `url` helper, an `Illuminate\Routing\UrlGenerator` instance is returned, allowing you to access information about the current URL:
+If no path is provided to the `url` helper, an `SwooleTW\Hyperf\Router\UrlGenerator` instance is returned, allowing you to access information about the current URL:
 
 ```php
 // Get the current URL without the query string...
