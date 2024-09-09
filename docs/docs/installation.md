@@ -19,6 +19,13 @@ After you have installed PHP, Composer and Swoole extension, you may create a ne
 composer create-project swooletw/laravel-hyperf example-app
 ```
 
+::: note
+Laravel Hyperf is currently under development and there's no released version yet. You can try the latest version of Laravel Hyperf by using the `master` branch.
+```shell:no-line-numbers
+composer create-project swooletw/laravel-hyperf example-laravel-hyperf dev-master
+```
+:::
+
 Once the project has been created, start Laravel Hyperf's local development server using Artisan's serve command:
 
 ```shell:no-line-numbers
