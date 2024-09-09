@@ -1,7 +1,7 @@
 Laravel Hyperf Documentation
 ===
 
-This repo is for [http://laravel-hyperf.com](http://laravel-hyperf.com)
+This repo is for [https://laravel-hyperf.com](https://laravel-hyperf.com)
 
 ## Contributing
 
