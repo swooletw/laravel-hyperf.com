@@ -2,6 +2,7 @@ import { defaultTheme } from '@vuepress/theme-default'
 import { defineUserConfig } from 'vuepress/cli'
 import { viteBundler } from '@vuepress/bundler-vite'
 import { mdEnhancePlugin } from "vuepress-plugin-md-enhance"
+import { redirectPlugin } from '@vuepress/plugin-redirect'
 import { sidebarConfig } from './sidebar.js'
 
 export default defineUserConfig({
@@ -20,6 +21,11 @@ export default defineUserConfig({
       tabs: true,
       align: true,
       chart: true,
+    }),
+    redirectPlugin({
+        config: {
+          '/docs': '/docs/introduction.html',
+        },
     }),
   ],
 
