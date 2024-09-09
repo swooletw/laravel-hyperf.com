@@ -1337,11 +1337,13 @@ Remember, content that is injected into a component will be supplied to the defa
 
 Now that we have defined our layout and task list views, we just need to return the `task` view from a route:
 
-    use App\Models\Task;
+```php
+use App\Models\Task;
 
-    Route::get('/tasks', function () {
-        return view('tasks', ['tasks' => Task::all()]);
-    });
+Route::get('/tasks', function () {
+    return view('tasks', ['tasks' => Task::all()]);
+});
+```
 
 ### Layouts Using Template Inheritance
 
