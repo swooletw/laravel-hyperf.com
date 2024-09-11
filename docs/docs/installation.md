@@ -26,7 +26,7 @@ composer create-project swooletw/laravel-hyperf example-laravel-hyperf dev-maste
 ```
 :::
 
-Once the project has been created, start Laravel Hyperf's local development server using Artisan's serve command:
+Once the project has been created, start Laravel Hyperf's local development server using serve command:
 
 ```shell:no-line-numbers
 cd example-app
