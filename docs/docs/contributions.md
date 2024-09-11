@@ -13,7 +13,7 @@ If you notice improper DocBlock, PHPStan, or IDE warnings while using Laravel Hy
 
 ## Support Questions
 
-Laravel's GitHub issue trackers are not intended to provide Laravel Hyperf help or support. Instead, use [GitHub Discussions](https://github.com/swooletw/hyperf-packages/discussions)
+Laravel Hyperf's GitHub issue trackers are not intended to provide Laravel Hyperf help or support. Instead, use [GitHub Discussions](https://github.com/swooletw/hyperf-packages/discussions)
 
 ## Security Vulnerabilities
 
