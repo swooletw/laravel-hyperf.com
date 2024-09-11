@@ -3,6 +3,7 @@ import { defineUserConfig } from 'vuepress/cli'
 import { viteBundler } from '@vuepress/bundler-vite'
 import { mdEnhancePlugin } from "vuepress-plugin-md-enhance"
 import { redirectPlugin } from '@vuepress/plugin-redirect'
+import { docsearchPlugin } from '@vuepress/plugin-docsearch'
 import { sidebarConfig } from './sidebar.js'
 
 export default defineUserConfig({
@@ -26,6 +27,11 @@ export default defineUserConfig({
         config: {
           '/docs': '/docs/introduction.html',
         },
+    }),
+    docsearchPlugin({
+      appId: 'A2UA6ZNU27',
+      apiKey: '03f51299803c8172f7b3008d88a12c86',
+      indexName: 'laravel-hyperf'
     }),
   ],
 
