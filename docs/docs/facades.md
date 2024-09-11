@@ -200,6 +200,7 @@ Request  |  SwooleTW\Hyperf\Http\Contracts\RequestContract  |  `request`
 Response  |  SwooleTW\Hyperf\Http\Contracts\ResponseContract  |  `response`
 Route  |  SwooleTW\Hyperf\Router\Router  |  `router`
 Schedule  |  SwooleTW\Hyperf\Foundation\Console\Contracts\Schedule  |  `schedule`
+Schema  |  SwooleTW\Hyperf\Database\Schema\SchemaProxy  |  `db.schema`
 Session  |  Hyperf\Contract\SessionInterface  |  `session`
 URL  |  SwooleTW\Hyperf\Router\UrlGenerator  |  `url`
 Validator  |  Hyperf\Validation\Contract\ValidatorFactoryInterface  |  `validator`
