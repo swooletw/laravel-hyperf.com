@@ -5,6 +5,16 @@ export const sidebarConfig = ({
             prefix: '/docs/',
             children: [
                 {
+                    text: 'Prologue',
+                    collapsible: true,
+                    children: [
+                        {
+                            text: 'Contributing Guide',
+                            link: 'contributions',
+                        }
+                    ]
+                },
+                {
                     text: 'Getting Started',
                     collapsible: true,
                     children: [
