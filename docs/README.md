@@ -1,7 +1,7 @@
 ---
 home: true
 title: Laravel Hyperf
-heroImage: https://vuepress.vuejs.org/images/hero.png
+heroImage: icon.svg
 actions:
   - text: Get Started
     link: /docs/introduction
@@ -19,5 +19,5 @@ features:
   - title: Ecosystem Compatibility
     details: Compatible with the Hyperf ecosystem, sharing the same community resources and packages.
 
-footer: MIT Licensed | Copyright © 2024-present SwooleTW Community
+footer: MIT Licensed | Copyright © 2024-present Laravel Hyperf
 ---

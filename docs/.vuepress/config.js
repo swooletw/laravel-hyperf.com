@@ -9,7 +9,7 @@ import { sidebarConfig } from './sidebar.js'
 export default defineUserConfig({
   lang: 'en-US',
   title: 'Laravel Hyperf',
-  description: 'The Laravel-Style Hyperf Framework for Artisans.',
+  description: 'The Laravel-Style Hyperf Framework for Web Artisans.',
 
   ignoreDeadLinks: true,
   bundler: viteBundler(),
@@ -36,7 +36,7 @@ export default defineUserConfig({
   ],
 
   theme: defaultTheme({
-    // logo: 'https://vuejs.press/images/hero.png',
+    logo: 'icon.svg',
 
     docsRepo: 'swooletw/laravel-hyperf.com',
 
