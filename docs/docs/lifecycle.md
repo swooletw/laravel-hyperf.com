@@ -29,7 +29,7 @@ Next, the console kernel defines an array of `bootstrappers` that will be run be
 
 ### Config Providers / Service Providers
 
-In Hyperf, there's a concept similar to Laravel's Service Providers called Config Providers. Config providers will provide all the configuration information of the corresponding components, which will be started by the Hyperf framework When loaded. Essentially every major feature offered by Hyperf is bootstrapped and configured by config providers.
+In Hyperf, there's a concept similar to Laravel's Service Providers called Config Providers. Config providers will provide all the configuration information of the corresponding components, which will be started by the Hyperf framework when loaded. Essentially every major feature offered by Hyperf is bootstrapped and configured by config providers.
 
 Laravel Hyperf also integrates [service providers](/docs/providers.html) in a manner similar to Laravel. Service providers are responsible for bootstrapping the framework's various components and are a fundamental part of the Laravel Hyperf application lifecycle.
 
