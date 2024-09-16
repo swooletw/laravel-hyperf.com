@@ -37,7 +37,7 @@ return [
 
 ### Reporting Exceptions
 
-In Laravel Hyperf, exception reporting is used to log exceptions or send them to an external service. By default, exceptions will be logged based on your [logging](/docs/logging.html) configuration. However, you are free to log exceptions however you wish.
+In Laravel Hyperf, exception reporting is used to log exceptions or send them to an external service. By default, exceptions will be logged based on your [logging](/docs/logging) configuration. However, you are free to log exceptions however you wish.
 
 If you need to report different types of exceptions in different ways, you may use the `reportable` method to register a closure that should be executed when an exception of a given type needs to be reported. Laravel will determine what type of exception the closure reports by examining the type-hint of the closure:
 
@@ -68,7 +68,7 @@ $this->reportable(function (InvalidOrderException $e) {
 ```
 
 ::: note
-To customize the exception reporting for a given exception, you may also utilize [reportable exceptions](/docs/errors.html#renderable-exceptions).
+To customize the exception reporting for a given exception, you may also utilize [reportable exceptions](/docs/errors#renderable-exceptions).
 :::
 
 #### Global Log Context
@@ -177,7 +177,7 @@ report($caught); // ignored
 
 ### Exception Log Levels
 
-When messages are written to your application's [logs](/docs/logging.html), the messages are written at a specified [log level](/docs/logging.html#log-levels), which indicates the severity or importance of the message being logged.
+When messages are written to your application's [logs](/docs/logging), the messages are written at a specified [log level](/docs/logging#log-levels), which indicates the severity or importance of the message being logged.
 
 As noted above, even when you register a custom exception reporting callback using the `reportable` method, Laravel Hyperf will still log the exception using the default logging configuration for the application; however, since the log level can sometimes influence the channels on which a message is logged, you may wish to configure the log level that certain exceptions are logged at.
 
@@ -388,7 +388,7 @@ public function report(): bool
 ```
 
 ::: note
-You may type-hint any required dependencies of the `report` method and they will automatically be injected into the method by Laravel Hyperf's [service container](/docs/container.html).
+You may type-hint any required dependencies of the `report` method and they will automatically be injected into the method by Laravel Hyperf's [service container](/docs/container).
 :::
 
 ## HTTP Exceptions

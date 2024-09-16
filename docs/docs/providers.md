@@ -15,7 +15,7 @@ If you open the `config/app.php` file included with Laravel Hyperf, you will see
 In this overview, you will learn how to write your own service providers and register them with your Laravel Hyperf application.
 
 ::: note
-If you would like to learn more about how Laravel Hyperf handles requests and works internally, check out our documentation on the Laravel [request lifecycle](/docs/lifecycle.html).
+If you would like to learn more about how Laravel Hyperf handles requests and works internally, check out our documentation on the Laravel [request lifecycle](/docs/lifecycle).
 :::
 
 ## Writing Config Providers
@@ -78,7 +78,7 @@ In addition to the predefined configuration keys above, you can define other con
 
 ## Writing Service Providers
 
-All service providers extend the `SwooleTW\Hyperf\Support\ServiceProvider` class. Most service providers contain a `register` and a `boot` method. Within the `register` method, you should **only bind things into the [service container](/docs/container.html)**. You should never attempt to register any event listeners, routes, or any other piece of functionality within the `register` method.
+All service providers extend the `SwooleTW\Hyperf\Support\ServiceProvider` class. Most service providers contain a `register` and a `boot` method. Within the `register` method, you should **only bind things into the [service container](/docs/container)**. You should never attempt to register any event listeners, routes, or any other piece of functionality within the `register` method.
 
 ::: note
 `make:provider` command will be provided in the future release.
@@ -86,7 +86,7 @@ All service providers extend the `SwooleTW\Hyperf\Support\ServiceProvider` class
 
 ### The Register Method
 
-As mentioned previously, within the `register` method, you should only bind things into the [service container](/docs/container.html). You should never attempt to register any event listeners, routes, or any other piece of functionality within the `register` method. Otherwise, you may accidentally use a service that is provided by a service provider which has not loaded yet.
+As mentioned previously, within the `register` method, you should only bind things into the [service container](/docs/container). You should never attempt to register any event listeners, routes, or any other piece of functionality within the `register` method. Otherwise, you may accidentally use a service that is provided by a service provider which has not loaded yet.
 
 Let's take a look at a basic service provider. Within any of your service provider methods, you always have access to the `$app` property which provides access to the service container:
 
@@ -113,7 +113,7 @@ class RiakServiceProvider extends ServiceProvider
 }
 ```
 
-This service provider only defines a `register` method, and uses that method to define an implementation of `App\Services\Riak\Connection` in the service container. If you're not yet familiar with Laravel's service container, check out [its documentation](/docs/container.html).
+This service provider only defines a `register` method, and uses that method to define an implementation of `App\Services\Riak\Connection` in the service container. If you're not yet familiar with Laravel's service container, check out [its documentation](/docs/container).
 
 #### The `bindings` and `singletons` Properties
 
@@ -168,7 +168,7 @@ class RequestServiceProvider extends ServiceProvider
 
 #### Boot Method Dependency Injection
 
-You may type-hint dependencies for your service provider's `boot` method. The [service container](/docs/container.html) will automatically inject any dependencies you need:
+You may type-hint dependencies for your service provider's `boot` method. The [service container](/docs/container) will automatically inject any dependencies you need:
 
 ```php
 use Hyperf\Database\ConnectionResolverInterface;

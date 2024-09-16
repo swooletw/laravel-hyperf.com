@@ -64,7 +64,7 @@ class PostController extends Controller
 
 Now we are ready to fill in our `store` method with the logic to validate the new blog post. To do this, we will use the `validate` method provided by the `SwooleTW\Hyperf\Http\Request` object. If the validation rules pass, your code will keep executing normally; however, if validation fails, an `Hyperf\Validation\ValidationException` exception will be thrown and the proper error response will automatically be sent back to the user.
 
-You can catch the validation exception and handle it in your [error handler](/docs/errors.html).
+You can catch the validation exception and handle it in your [error handler](/docs/errors).
 
 To get a better understanding of the `validate` method, let's jump back into the `store` method:
 
@@ -158,7 +158,7 @@ Laravel Hyperf's built-in validation rules each have an error message that is lo
 
 Within the `lang/en/validation.php` file, you will find a translation entry for each validation rule. You are free to change or modify these messages based on the needs of your application.
 
-In addition, you may copy this file to another language directory to translate the messages for your application's language. To learn more about Laravel Hyperf localization, check out the complete [localization documentation](/docs/localization.html).
+In addition, you may copy this file to another language directory to translate the messages for your application's language. To learn more about Laravel Hyperf localization, check out the complete [localization documentation](/docs/localization).
 
 #### XHR Requests and Validation
 
@@ -166,7 +166,7 @@ In this example, we used a traditional form to send data to the application. How
 
 #### The `@error` Directive
 
-You may use the `@error` [Blade](/docs/blade.html) directive to quickly determine if validation error messages exist for a given attribute. Within an `@error` directive, you may echo the `$message` variable to display the error message:
+You may use the `@error` [Blade](/docs/blade) directive to quickly determine if validation error messages exist for a given attribute. Within an `@error` directive, you may echo the `$message` variable to display the error message:
 
 ```html
 <!-- /resources/views/post/create.blade.php -->
@@ -337,7 +337,7 @@ public function after(): array
 
 ### Authorizing Form Requests
 
-The form request class also contains an `authorize` method. Within this method, you may determine if the authenticated user actually has the authority to update a given resource. For example, you may determine if a user actually owns a blog comment they are attempting to update. Most likely, you will interact with your [authorization gates and policies](/docs/authorization.html) within this method:
+The form request class also contains an `authorize` method. Within this method, you may determine if the authenticated user actually has the authority to update a given resource. For example, you may determine if a user actually owns a blog comment they are attempting to update. Most likely, you will interact with your [authorization gates and policies](/docs/authorization) within this method:
 
 ```php
 use App\Models\Comment;
@@ -422,7 +422,7 @@ protected function prepareForValidation(): void
 
 ## Manually Creating Validators
 
-If you do not want to use the `validate` method on the request, you may create a validator instance manually using the `Validator` [facade](/docs/facades.html). The `make` method on the facade generates a new validator instance:
+If you do not want to use the `validate` method on the request, you may create a validator instance manually using the `Validator` [facade](/docs/facades). The `make` method on the facade generates a new validator instance:
 
 ```php
 <?php
@@ -607,7 +607,7 @@ Laravel Hyperf's built-in validation rules each have an error message that is lo
 
 Within the `lang/en/validation.php` file, you will find a translation entry for each validation rule. You are free to change or modify these messages based on the needs of your application.
 
-In addition, you may copy this file to another language directory to translate the messages for your application's language. To learn more about Laravel localization, check out the complete [localization documentation](/docs/localization.html).
+In addition, you may copy this file to another language directory to translate the messages for your application's language. To learn more about Laravel localization, check out the complete [localization documentation](/docs/localization).
 
 #### Custom Messages for Specific Attributes
 

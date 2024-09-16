@@ -27,7 +27,7 @@ Did you know you can also return [Eloquent collections](/docs/eloquent-collectio
 
 #### Response Objects
 
-Typically, you won't just be returning simple strings or arrays from your route actions. Instead, you will be returning full `SwooleTW\Hyperf\Http\Response` instances or [views](/docs/views.html).
+Typically, you won't just be returning simple strings or arrays from your route actions. Instead, you will be returning full `SwooleTW\Hyperf\Http\Response` instances or [views](/docs/views).
 
 Returning a full `Response` instance allows you to customize the response's HTTP status code and headers. A `Response` instance inherits from the `SwooleTW\Hyperf\Http\Response` class, which provides a variety of methods for building HTTP responses:
 
@@ -44,7 +44,7 @@ Unlike `Illuminate\Http\Response` in Laravel, `SwooleTW\Hyperf\Http\Response` do
 
 #### Eloquent Models and Collections
 
-You may also return [Eloquent ORM](/docs/eloquent.html) models and collections directly from your routes and controllers. When you do, Laravel Hyperf will automatically convert the models and collections to JSON responses while respecting the model's [hidden attributes](/docs/eloquent-serialization.html#hiding-attributes-from-json):
+You may also return [Eloquent ORM](/docs/eloquent) models and collections directly from your routes and controllers. When you do, Laravel Hyperf will automatically convert the models and collections to JSON responses while respecting the model's [hidden attributes](/docs/eloquent-serialization#hiding-attributes-from-json):
 
 ```php
 use App\Models\User;
@@ -130,11 +130,11 @@ Route::get('/dashboard', function () {
 
 ## Other Response Types
 
-The `response` helper may be used to generate other types of response instances. When the `response` helper is called without arguments, an implementation of the `SwooleTW\Hyperf\Http\Contracts\ResponseContract` [contract](/docs/contracts.html) is returned. This contract provides several helpful methods for generating responses.
+The `response` helper may be used to generate other types of response instances. When the `response` helper is called without arguments, an implementation of the `SwooleTW\Hyperf\Http\Contracts\ResponseContract` [contract](/docs/contracts) is returned. This contract provides several helpful methods for generating responses.
 
 ### View Responses
 
-If you need control over the response's status and headers but also need to return a [view](/docs/views.html) as the response's content, you should use the `view` method:
+If you need control over the response's status and headers but also need to return a [view](/docs/views) as the response's content, you should use the `view` method:
 
 ```php
 return response()
@@ -215,7 +215,7 @@ return response()->withFile($pathToFile);
 
 ## Response Macros
 
-If you would like to define a custom response that you can re-use in a variety of your routes and controllers, you may use the `macro` method on the `Response` facade. Typically, you should call this method from the `boot` method of one of your application's [service providers](/docs/providers.html), such as the `App\Providers\AppServiceProvider` service provider:
+If you would like to define a custom response that you can re-use in a variety of your routes and controllers, you may use the `macro` method on the `Response` facade. Typically, you should call this method from the `boot` method of one of your application's [service providers](/docs/providers), such as the `App\Providers\AppServiceProvider` service provider:
 
 ```php
 <?php

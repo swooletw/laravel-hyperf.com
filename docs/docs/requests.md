@@ -9,7 +9,7 @@ Laravel Hyperf's `SwooleTW\Hyperf\Http\Request` class provides an object-oriente
 
 ### Accessing the Request
 
-To obtain an instance of the current HTTP request via dependency injection, you should type-hint the `SwooleTW\Hyperf\Http\Request` class on your route closure or controller method. The incoming request instance will automatically be injected by the Laravel Hyperf [service container](/docs/container.html):
+To obtain an instance of the current HTTP request via dependency injection, you should type-hint the `SwooleTW\Hyperf\Http\Request` class on your route closure or controller method. The incoming request instance will automatically be injected by the Laravel Hyperf [service container](/docs/container):
 
 ```php
 <?php
@@ -223,7 +223,7 @@ You may retrieve all of the incoming request's input data as an `array` using th
 $input = $request->all();
 ```
 
-Using the `collect` method, you may retrieve all of the incoming request's input data as a [collection](/docs/collections.html):
+Using the `collect` method, you may retrieve all of the incoming request's input data as a [collection](/docs/collections):
 
 ```php
 $input = $request->collect();
@@ -289,7 +289,7 @@ $name = $request->input('user.name');
 
 #### Retrieving Stringable Input Values
 
-Instead of retrieving the request's input data as a primitive `string`, you may use the `string` method to retrieve the request data as an instance of [`Hyperf\Stringable\Str`](/docs/helpers.html#fluent-strings):
+Instead of retrieving the request's input data as a primitive `string`, you may use the `string` method to retrieve the request data as an instance of [`Hyperf\Stringable\Str`](/docs/helpers#fluent-strings):
 
 ```php
 $name = $request->string('name')->trim();

@@ -68,7 +68,7 @@ Since many of Laravel Hyperf's configuration option values may vary depending on
 Your `.env` file should not be committed to your application's source control, since each developer / server using your application could require a different environment configuration. Furthermore, this would be a security risk in the event an intruder gains access to your source control repository, since any sensitive credentials would be exposed.
 
 ::: note
-For more information about the `.env` file and environment based configuration, check out the full [configuration documentation](/docs/configuration.html#environment-configuration).
+For more information about the `.env` file and environment based configuration, check out the full [configuration documentation](/docs/configuration#environment-configuration).
 :::
 
 ## Databases and Migrations
@@ -88,7 +88,7 @@ DB_USERNAME=root
 DB_PASSWORD=
 ```
 
-If you choose to use a database other than SQLite, you will need to create the database and run your application's [database migrations](/docs/migrations.html):
+If you choose to use a database other than SQLite, you will need to create the database and run your application's [database migrations](/docs/migrations):
 
 ```shell:no-line-numbers
 php hyperf migrate

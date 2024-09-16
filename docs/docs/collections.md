@@ -21,7 +21,7 @@ $collection = collect([1, 2, 3]);
 ```
 
 ::: note
-The results of [Eloquent](/docs/eloquent.html) queries are always returned as `Collection` instances.
+The results of [Eloquent](/docs/eloquent) queries are always returned as `Collection` instances.
 :::
 
 ### Extending Collections
@@ -45,7 +45,7 @@ $upper = $collection->toUpper();
 // ['FIRST', 'SECOND']
 ```
 
-Typically, you should declare collection macros in the `boot` method of a [service provider](/docs/providers.html).
+Typically, you should declare collection macros in the `boot` method of a [service provider](/docs/providers).
 
 #### Macro Arguments
 
@@ -286,7 +286,7 @@ $chunks->all();
 // [[1, 2, 3, 4], [5, 6, 7]]
 ```
 
-This method is especially useful in [views](/docs/views.html) when working with a grid system such as [Bootstrap](https://getbootstrap.com/docs/4.1/layout/grid/). For example, imagine you have a collection of [Eloquent](/docs/eloquent.html) models you want to display in a grid:
+This method is especially useful in [views](/docs/views) when working with a grid system such as [Bootstrap](https://getbootstrap.com/docs/4.1/layout/grid/). For example, imagine you have a collection of [Eloquent](/docs/eloquent) models you want to display in a grid:
 
 ```html
 @foreach ($products->chunk(3) as $chunk)
@@ -475,7 +475,7 @@ collect(['1', '2'])->containsOneItem();
 This method has the same signature as the [`contains`](#method-contains) method; however, all values are compared using "strict" comparisons.
 
 > [!NOTE]
-> This method's behavior is modified when using [Eloquent Collections](/docs/eloquent.html-collections#method-contains).
+> This method's behavior is modified when using [Eloquent Collections](/docs/eloquent-collections#method-contains).
 
 <a name="method-count"></a>
 #### `count()` {.collection-method}
@@ -598,7 +598,7 @@ $diff->all();
 ```
 
 ::: note
-This method's behavior is modified when using [Eloquent Collections](/docs/eloquent.html-collections#method-diff).
+This method's behavior is modified when using [Eloquent Collections](/docs/eloquent-collections#method-diff).
 :::
 
 <a name="method-diffassoc"></a>
@@ -897,7 +897,7 @@ $filtered->all();
 For the inverse of `except`, see the [only](#method-only) method.
 
 ::: note
-This method's behavior is modified when using [Eloquent Collections](/docs/eloquent.html-collections#method-except).
+This method's behavior is modified when using [Eloquent Collections](/docs/eloquent-collections#method-except).
 :::
 
 <a name="method-filter"></a>
@@ -1340,7 +1340,7 @@ $intersect->all();
 ```
 
 ::: note
-This method's behavior is modified when using [Eloquent Collections](/docs/eloquent.html-collections#method-intersect).
+This method's behavior is modified when using [Eloquent Collections](/docs/eloquent-collections#method-intersect).
 :::
 
 <a name="method-intersectAssoc"></a>
@@ -1842,7 +1842,7 @@ $filtered->all();
 For the inverse of `only`, see the [except](#method-except) method.
 
 ::: note
-This method's behavior is modified when using [Eloquent Collections](/docs/eloquent.html-collections#method-only).
+This method's behavior is modified when using [Eloquent Collections](/docs/eloquent-collections#method-only).
 :::
 
 <a name="method-pad"></a>
@@ -3078,7 +3078,7 @@ $collection->all();
 <a name="method-toarray"></a>
 #### `toArray()` {.collection-method}
 
-The `toArray` method converts the collection into a plain PHP `array`. If the collection's values are [Eloquent](/docs/eloquent.html) models, the models will also be converted to arrays:
+The `toArray` method converts the collection into a plain PHP `array`. If the collection's values are [Eloquent](/docs/eloquent) models, the models will also be converted to arrays:
 
 ```php
 $collection = collect(['name' => 'Desk', 'price' => 200]);
@@ -3242,7 +3242,7 @@ $unique->values()->all();
 The `unique` method uses "loose" comparisons when checking item values, meaning a string with an integer value will be considered equal to an integer of the same value. Use the [`uniqueStrict`](#method-uniquestrict) method to filter using "strict" comparisons.
 
 ::: note
-This method's behavior is modified when using [Eloquent Collections](/docs/eloquent.html-collections#method-unique).
+This method's behavior is modified when using [Eloquent Collections](/docs/eloquent-collections#method-unique).
 :::
 
 <a name="method-uniquestrict"></a>
@@ -4029,7 +4029,7 @@ $lazyCollection->each(function (int $number) {
 // 59
 ```
 
-To illustrate the usage of this method, imagine an application that submits invoices from the database using a cursor. You could define a [scheduled task](/docs/scheduling.html) that runs every 15 minutes and only processes invoices for a maximum of 14 minutes:
+To illustrate the usage of this method, imagine an application that submits invoices from the database using a cursor. You could define a [scheduled task](/docs/scheduling) that runs every 15 minutes and only processes invoices for a maximum of 14 minutes:
 
 ```php
 use App\Models\Invoice;

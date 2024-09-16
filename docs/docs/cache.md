@@ -217,7 +217,7 @@ cache()->remember('users', $seconds, function () {
 ```
 
 ::: tips
-When testing call to the global `cache` function, you may use the `Cache::shouldReceive` method just as if you were [testing the facade](/docs/mocking.html#mocking-facades).
+When testing call to the global `cache` function, you may use the `Cache::shouldReceive` method just as if you were [testing the facade](/docs/mocking#mocking-facades).
 :::
 
 ## Atomic Locks
@@ -322,7 +322,7 @@ Cache::lock('processing')->forceRelease();
 
 ### Writing the Driver
 
-To create our custom cache driver, we first need to implement the `SwooleTW\Hyperf\Cache\Contracts\Store` [contract](/docs/contracts.html). So, a MongoDB cache implementation might look something like this:
+To create our custom cache driver, we first need to implement the `SwooleTW\Hyperf\Cache\Contracts\Store` [contract](/docs/contracts). So, a MongoDB cache implementation might look something like this:
 
 ```php
 <?php
@@ -396,13 +396,13 @@ class AppServiceProvider extends ServiceProvider
 }
 ```
 
-The first argument passed to the `extend` method is the name of the driver. This will correspond to your `driver` option in the `config/cache.php` configuration file. The second argument is a closure that should return an `SwooleTW\Hyperf\Cache\Repository` instance. The closure will be passed an `$app` instance, which is an instance of the [service container](/docs/container.html).
+The first argument passed to the `extend` method is the name of the driver. This will correspond to your `driver` option in the `config/cache.php` configuration file. The second argument is a closure that should return an `SwooleTW\Hyperf\Cache\Repository` instance. The closure will be passed an `$app` instance, which is an instance of the [service container](/docs/container).
 
 Once your extension is registered, update your `config/cache.php` configuration file's `driver` option to the name of your extension.
 
 ## Events
 
-To execute code on every cache operation, you may listen for the [events](/docs/events.html) fired by the cache. Typically, you should place these event listeners within your application's `App\Providers\EventServiceProvider` class:
+To execute code on every cache operation, you may listen for the [events](/docs/events) fired by the cache. Typically, you should place these event listeners within your application's `App\Providers\EventServiceProvider` class:
 
 ```php
 use App\Listeners\LogCacheHit;

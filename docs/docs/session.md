@@ -46,7 +46,7 @@ Schema::create('sessions', function (Blueprint $table) {
 });
 ```
 
-You may use the `session:table` Artisan command to generate this migration. To learn more about database migrations, you may consult the complete [migration documentation](/docs/migrations.html):
+You may use the `session:table` Artisan command to generate this migration. To learn more about database migrations, you may consult the complete [migration documentation](/docs/migrations):
 
 ```shell
 php artisan session:table
@@ -56,7 +56,7 @@ php artisan migrate
 
 #### Redis
 
-Before using Redis sessions with Laravel Hyperf, you will need to either install the PhpRedis PHP extension via PECL. For more information on configuring Redis, consult Laravel Hyperf's [Redis documentation](/docs/redis.html#configuration).
+Before using Redis sessions with Laravel Hyperf, you will need to either install the PhpRedis PHP extension via PECL. For more information on configuring Redis, consult Laravel Hyperf's [Redis documentation](/docs/redis#configuration).
 
 ::: note
 In the `session` configuration file, the `connection` option may be used to specify which Redis connection is used by the session.
@@ -66,7 +66,7 @@ In the `session` configuration file, the `connection` option may be used to spec
 
 ### Retrieving Data
 
-There are two primary ways of working with session data in Laravel Hyperf: the global `session` helper and via a `Request` instance. First, let's look at accessing the session via a `Request` instance, which can be type-hinted on a route closure or controller method. Remember, controller method dependencies are automatically injected via the Laravel Hyperf [service container](/docs/container.html):
+There are two primary ways of working with session data in Laravel Hyperf: the global `session` helper and via a `Request` instance. First, let's look at accessing the session via a `Request` instance, which can be type-hinted on a route closure or controller method. Remember, controller method dependencies are automatically injected via the Laravel Hyperf [service container](/docs/container):
 
 ```php
 <?php

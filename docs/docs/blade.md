@@ -5,7 +5,7 @@
 
 Blade is the simple, yet powerful templating engine that is included with Laravel. Unlike some PHP templating engines, Blade does not restrict you from using plain PHP code in your templates. In fact, all Blade templates are compiled into plain PHP code and cached until they are modified, meaning Blade adds essentially zero overhead to your application. Blade template files use the `.blade.php` file extension and are typically stored in the `resources/views` directory.
 
-Blade views may be returned from routes or controllers using the global `view` helper. Of course, as mentioned in the documentation on [views](/docs/views.html), data may be passed to the Blade view using the `view` helper's second argument:
+Blade views may be returned from routes or controllers using the global `view` helper. Of course, as mentioned in the documentation on [views](/docs/views), data may be passed to the Blade view using the `view` helper's second argument:
 
 ```php
 Route::get('/', function () {
@@ -757,7 +757,7 @@ The closure should return a string. If the returned string corresponds to an exi
 
 #### Additional Dependencies
 
-If your component requires dependencies from Laravel's [service container](/docs/container.html), you may list them before any of the component's data attributes and they will automatically be injected by the container:
+If your component requires dependencies from Laravel's [service container](/docs/container), you may list them before any of the component's data attributes and they will automatically be injected by the container:
 
 ```php
 use App\Services\AlertCreator;
@@ -1412,7 +1412,7 @@ The `@yield` directive also accepts a default value as its second parameter. Thi
 
 ### Validation Errors
 
-The `@error` directive may be used to quickly check if [validation error messages](/docs/validation.html#quick-displaying-the-validation-errors) exist for a given attribute. Within an `@error` directive, you may echo the `$message` variable to display the error message:
+The `@error` directive may be used to quickly check if [validation error messages](/docs/validation#quick-displaying-the-validation-errors) exist for a given attribute. Within an `@error` directive, you may echo the `$message` variable to display the error message:
 
 ```html
 <!-- /resources/views/post/create.blade.php -->
@@ -1440,7 +1440,7 @@ Since the `@error` directive compiles to an "if" statement, you may use the `@el
     class="@error('email') is-invalid @else is-valid @enderror">
 ```
 
-You may pass [the name of a specific error bag](/docs/validation.html#named-error-bags) as the second parameter to the `@error` directive to retrieve validation error messages on pages containing multiple forms:
+You may pass [the name of a specific error bag](/docs/validation#named-error-bags) as the second parameter to the `@error` directive to retrieve validation error messages on pages containing multiple forms:
 
 ```html
 <!-- /resources/views/auth.blade.php -->
@@ -1500,7 +1500,7 @@ If you would like to prepend content onto the beginning of a stack, you should u
 
 ## Service Injection
 
-The `@inject` directive may be used to retrieve a service from the Laravel [service container](/docs/container.html). The first argument passed to `@inject` is the name of the variable the service will be placed into, while the second argument is the class or interface name of the service you wish to resolve:
+The `@inject` directive may be used to retrieve a service from the Laravel [service container](/docs/container). The first argument passed to `@inject` is the name of the variable the service will be placed into, while the second argument is the class or interface name of the service you wish to resolve:
 
 ```html
 @inject('metrics', 'App\Services\MetricsService')

@@ -156,7 +156,7 @@ Log::emergency('The system is down!');
 
 ## Writing Log Messages
 
-You may write information to the logs using the `Log` [facade](/docs/facades.html). As previously mentioned, the logger provides the eight logging levels defined in the [RFC 5424 specification](https://tools.ietf.org/html/rfc5424): **emergency**, **alert**, **critical**, **error**, **warning**, **notice**, **info** and **debug**:
+You may write information to the logs using the `Log` [facade](/docs/facades). As previously mentioned, the logger provides the eight logging levels defined in the [RFC 5424 specification](https://tools.ietf.org/html/rfc5424): **emergency**, **alert**, **critical**, **error**, **warning**, **notice**, **info** and **debug**:
 
 ```php
 use SwooleTW\Hyperf\Support\Facades\Log;
@@ -280,7 +280,7 @@ class AssignRequestId
 ```
 
 ::: note
-If you need to share log context while processing queued jobs, you may utilize [job middleware](/docs/queues.html#job-middleware).
+If you need to share log context while processing queued jobs, you may utilize [job middleware](/docs/queues#job-middleware).
 :::
 
 ### Writing to Specific Channels
@@ -369,7 +369,7 @@ class CustomizeFormatter
 ```
 
 ::: note
-All of your "tap" classes are resolved by the [service container](/docs/container.html), so any constructor dependencies they require will automatically be injected.
+All of your "tap" classes are resolved by the [service container](/docs/container), so any constructor dependencies they require will automatically be injected.
 :::
 
 ### Creating Monolog Handler Channels

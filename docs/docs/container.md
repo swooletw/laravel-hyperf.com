@@ -44,11 +44,11 @@ In this example, the `PodcastController` needs to retrieve podcasts from a data 
 
 A deep understanding of the Laravel Hyperf service container is essential to building a powerful, large application, as well as for contributing to the Laravel core itself.
 
-### Differences from Laravel Container
+### Differences between Laravel Container
 
 To ensure compatibility with the Hyperf Container, there are some important differences you need to be aware of:
 
-* Different from Laravel, every binding in the Hyperf Container is a `singleton`. You need to ensure that every instance can be shared across different requests and coroutines. **Do not store states in the objects!** Instead, use [Context](/docs/context.html) if you need to maintain states within objects.
+* Different from Laravel, every binding in the Hyperf Container is a `singleton`. You need to ensure that every instance can be shared across different requests and coroutines. **Do not store states in the objects!** Instead, use [Context](/docs/context) if you need to maintain states within objects.
 
 * If you need to get a new instance rather than fetching the same singleton object from the container, you can use the `make` function. This will initiate a new object and inject related dependencies (note that these dependencies are still singletons).
 
@@ -77,7 +77,7 @@ Route::get('/', function (Service $service) {
 
 In this example, hitting your application's `/` route will automatically resolve the `Service` class and inject it into your route's handler. This is game changing. It means you can develop your application and take advantage of dependency injection without worrying about bloated configuration files.
 
-Thankfully, many of the classes you will be writing when building a Laravel Hyperf application automatically receive their dependencies via the container, including [controllers](/docs/controllers.html), [event listeners](/docs/events.html), [middleware](/docs/middleware.html), and more. Once you taste the power of automatic and zero configuration dependency injection it feels impossible to develop without it.
+Thankfully, many of the classes you will be writing when building a Laravel Hyperf application automatically receive their dependencies via the container, including [controllers](/docs/controllers), [event listeners](/docs/events), [middleware](/docs/middleware), and more. Once you taste the power of automatic and zero configuration dependency injection it feels impossible to develop without it.
 
 ### When to Utilize the Container
 
@@ -91,9 +91,9 @@ Route::get('/', function (Request $request) {
 });
 ```
 
-In many cases, thanks to automatic dependency injection and [facades](/docs/facades.html), you can build Laravel Hyperf applications without **ever** manually binding or resolving anything from the container. **So, when would you ever manually interact with the container?** Let's examine two situations.
+In many cases, thanks to automatic dependency injection and [facades](/docs/facades), you can build Laravel Hyperf applications without **ever** manually binding or resolving anything from the container. **So, when would you ever manually interact with the container?** Let's examine two situations.
 
-First, if you write a class that implements an interface and you wish to type-hint that interface on a route or class constructor, you must [tell the container how to resolve that interface](#binding-interfaces-to-implementations). Secondly, if you are [writing a Laravel Hyperf package](/docs/packages.html) that you plan to share with other Laravel Hyperf developers, you may need to bind your package's services into the container.
+First, if you write a class that implements an interface and you wish to type-hint that interface on a route or class constructor, you must [tell the container how to resolve that interface](#binding-interfaces-to-implementations). Secondly, if you are [writing a Laravel Hyperf package](/docs/packages) that you plan to share with other Laravel Hyperf developers, you may need to bind your package's services into the container.
 
 ## Binding
 
@@ -101,7 +101,7 @@ First, if you write a class that implements an interface and you wish to type-hi
 
 #### Simple Bindings
 
-Almost all of your service container bindings will be registered within [service providers](/docs/providers.html), so most of these examples will demonstrate using the container in that context.
+Almost all of your service container bindings will be registered within [service providers](/docs/providers), so most of these examples will demonstrate using the container in that context.
 
 Within a service provider, you always have access to the container via the `$this->app` property. We can register a binding using the `bind` method, passing the class or interface name that we wish to register along with a closure that returns an instance of the class:
 
@@ -117,7 +117,7 @@ $this->app->bind(Transistor::class, function (Application $app) {
 
 Note that we receive the container itself as an argument to the resolver. We can then use the container to resolve sub-dependencies of the object we are building.
 
-As mentioned, you will typically be interacting with the container within service providers; however, if you would like to interact with the container outside of a service provider, you may do so via the `App` [facade](/docs/facades.html):
+As mentioned, you will typically be interacting with the container within service providers; however, if you would like to interact with the container outside of a service provider, you may do so via the `App` [facade](/docs/facades):
 
 ```php
 use App\Services\Transistor;
@@ -230,7 +230,7 @@ if ($this->app->bound(Transistor::class)) {
 }
 ```
 
-If you are outside of a service provider in a location of your code that does not have access to the `$app` variable, you may use the `App` [facade](/docs/facades.html) or the `app` [helper](/docs/helpers.html#method-app) to resolve a class instance from the container:
+If you are outside of a service provider in a location of your code that does not have access to the `$app` variable, you may use the `App` [facade](/docs/facades) or the `app` [helper](/docs/helpers#method-app) to resolve a class instance from the container:
 
 ```php
 use App\Services\Transistor;
@@ -269,7 +269,7 @@ You can get the container instance by this bindings:
 
 ### Automatic Injection
 
-Alternatively, and importantly, you may type-hint the dependency in the constructor of a class that is resolved by the container, including [controllers](/docs/controllers.html), [event listeners](/docs/events.html), [middleware](/docs/middleware.html), and more. In practice, this is how most of your objects should be resolved by the container.
+Alternatively, and importantly, you may type-hint the dependency in the constructor of a class that is resolved by the container, including [controllers](/docs/controllers), [event listeners](/docs/events), [middleware](/docs/middleware), and more. In practice, this is how most of your objects should be resolved by the container.
 
 For example, you may type-hint a service defined by your application in a controller's constructor. The service will automatically be resolved and injected into the class:
 

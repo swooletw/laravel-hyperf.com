@@ -23,7 +23,7 @@ This flexibility allows developers to choose the middleware style that best suit
 ::: tip
 For compatibility with middleware in Hyperf, the `request` you get in the middleware is a `Psr\Http\Message\ServerRequestInterface` object, which only implements basic PSR-7 methods. If you want to use `SwooleTW\Hyperf\Http\Request` within the middleware, you can get it by fetching `SwooleTW\Hyperf\Http\Request` from the container, using `SwooleTW\Hyperf\Support\Facades\Request` facade or calling `request()` global helper function.
 
-`SwooleTW\Hyperf\Http\Request` implements `Psr\Http\Message\ServerRequestInterface` and provides many other useful functions like in Laravel. For more details, you can see: [requests](/docs/requests.html).
+`SwooleTW\Hyperf\Http\Request` implements `Psr\Http\Message\ServerRequestInterface` and provides many other useful functions like in Laravel. For more details, you can see: [requests](/docs/requests).
 :::
 
 ## Defining a Hyperf Middleware
@@ -123,7 +123,7 @@ As you can see, if the given `token` does not match our secret token, the middle
 It's best to envision middleware as a series of "layers" HTTP requests must pass through before they hit your application. Each layer can examine the request and even reject it entirely.
 
 ::: note
-All middleware are resolved via the [service container](/docs/container.html), so you may type-hint any dependencies you need within a middleware's constructor.
+All middleware are resolved via the [service container](/docs/container), so you may type-hint any dependencies you need within a middleware's constructor.
 :::
 
 ::: important

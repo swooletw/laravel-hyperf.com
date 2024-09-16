@@ -29,6 +29,9 @@ devDependencies:
   vuepress-plugin-md-enhance:
     specifier: 2.0.0-rc.52
     version: 2.0.0-rc.52(chart.js@4.4.4)(markdown-it@14.1.0)(vuepress@2.0.0-rc.15)
+  vuepress-plugin-remove-html-extension:
+    specifier: ^1.13.0
+    version: 1.13.0
 
 packages:
 
@@ -3217,6 +3220,16 @@ packages:
     transitivePeerDependencies:
       - '@vue/composition-api'
       - markdown-it
+      - typescript
+    dev: true
+
+  /vuepress-plugin-remove-html-extension@1.13.0:
+    resolution: {integrity: sha512-ef82agY8Yo2H34rSzIQ+ASimwaaun6mFNvAHzQJUpCfjlktpqxwwLALx3luocexoF8TRD0LdS4IM8Ccv+c6Lsw==}
+    engines: {node: ^16.0.0 || >=18.0.0}
+    dependencies:
+      '@vuepress/core': 2.0.0-rc.15
+    transitivePeerDependencies:
+      - supports-color
       - typescript
     dev: true
 

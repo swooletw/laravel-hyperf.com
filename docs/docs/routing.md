@@ -58,7 +58,7 @@ When defining multiple routes that share the same URI, routes using the `get`, `
 
 #### Dependency Injection
 
-You may type-hint any dependencies required by your route in your route's callback signature. The declared dependencies will automatically be resolved and injected into the callback by the Laravel [service container](/docs/container.html). For example, you may type-hint the `Illuminate\Http\Request` class to have the current HTTP request automatically injected into your route callback:
+You may type-hint any dependencies required by your route in your route's callback signature. The declared dependencies will automatically be resolved and injected into the callback by the Laravel [service container](/docs/container). For example, you may type-hint the `Illuminate\Http\Request` class to have the current HTTP request automatically injected into your route callback:
 
 ```php
 use Hyperf\HttpServer\Request;
@@ -189,7 +189,7 @@ To learn more about route groups, we'll walk through several common use-cases fo
 
 ### Middleware
 
-To assign [middleware](/docs/middleware.html) to all routes within a group, you may use the `middleware` method before defining the group. Middleware are executed in the order they are listed in the array:
+To assign [middleware](/docs/middleware) to all routes within a group, you may use the `middleware` method before defining the group. Middleware are executed in the order they are listed in the array:
 
 ```php
 Route::group('api', function () {

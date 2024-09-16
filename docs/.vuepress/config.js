@@ -5,6 +5,7 @@ import { mdEnhancePlugin } from "vuepress-plugin-md-enhance"
 import { redirectPlugin } from '@vuepress/plugin-redirect'
 import { docsearchPlugin } from '@vuepress/plugin-docsearch'
 import { sidebarConfig } from './sidebar.js'
+import { removeHtmlExtensionPlugin } from 'vuepress-plugin-remove-html-extension'
 
 export default defineUserConfig({
   lang: 'en-US',
@@ -15,6 +16,7 @@ export default defineUserConfig({
   bundler: viteBundler(),
 
   plugins: [
+    removeHtmlExtensionPlugin(),
     mdEnhancePlugin({
       hint: true,
       tasklist: true,

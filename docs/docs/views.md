@@ -7,7 +7,7 @@ Of course, it's not practical to return entire HTML documents strings directly f
 
 Views separate your controller / application logic from your presentation logic and are stored in the `resources/views` directory.
 
-When using Laravel Hyperf, view templates are usually written using the [Blade templating language](/docs/blade.html). A simple view might look something like this:
+When using Laravel Hyperf, view templates are usually written using the [Blade templating language](/docs/blade). A simple view might look something like this:
 
 ```html
 <!-- View stored in resources/views/greeting.blade.php -->
@@ -28,7 +28,7 @@ Route::get('/', function () {
 ```
 
 ::: note
-Looking for more information on how to write Blade templates? Check out the full [Blade documentation](/docs/blade.html) to get started.
+Looking for more information on how to write Blade templates? Check out the full [Blade documentation](/docs/blade) to get started.
 :::
 
 
@@ -36,7 +36,7 @@ Looking for more information on how to write Blade templates? Check out the full
 
 You may create a view by placing a file with the `.blade.php` extension in your application's `resources/views` directory.
 
-The `.blade.php` extension informs the framework that the file contains a [Blade template](/docs/blade.html). Blade templates contain HTML as well as Blade directives that allow you to easily echo values, create "if" statements, iterate over data, and more.
+The `.blade.php` extension informs the framework that the file contains a [Blade template](/docs/blade). Blade templates contain HTML as well as Blade directives that allow you to easily echo values, create "if" statements, iterate over data, and more.
 
 Once you have created a view, you may return it from one of your application's routes or controllers using the global `view` helper:
 
@@ -54,7 +54,7 @@ use SwooleTW\Hyperf\Support\Facades\View;
 return View::make('greeting', ['name' => 'James']);
 ```
 
-As you can see, the first argument passed to the `view` helper corresponds to the name of the view file in the `resources/views` directory. The second argument is an array of data that should be made available to the view. In this case, we are passing the `name` variable, which is displayed in the view using [Blade syntax](/docs/blade.html).
+As you can see, the first argument passed to the `view` helper corresponds to the name of the view file in the `resources/views` directory. The second argument is an array of data that should be made available to the view. In this case, we are passing the `name` variable, which is displayed in the view using [Blade syntax](/docs/blade).
 
 ### Nested View Directories
 
@@ -144,7 +144,7 @@ class AppServiceProvider extends ServiceProvider
 
 View composers are callbacks or class methods that are called when a view is rendered. If you have data that you want to be bound to a view each time that view is rendered, a view composer can help you organize that logic into a single location. View composers may prove particularly useful if the same view is returned by multiple routes or controllers within your application and always needs a particular piece of data.
 
-Typically, view composers will be registered within one of your application's [service providers](/docs/providers.html). In this example, we'll assume that we have created a new `App\Providers\ViewServiceProvider` to house this logic.
+Typically, view composers will be registered within one of your application's [service providers](/docs/providers). In this example, we'll assume that we have created a new `App\Providers\ViewServiceProvider` to house this logic.
 
 We'll use the `View` facade's `composer` method to register the view composer. Laravel does not include a default directory for class based view composers, so you are free to organize them however you wish. For example, you could create an `app/View/Composers` directory to house all of your application's view composers:
 
@@ -221,7 +221,7 @@ class ProfileComposer
 }
 ```
 
-As you can see, all view composers are resolved via the [service container](/docs/container.html), so you may type-hint any dependencies you need within a composer's constructor.
+As you can see, all view composers are resolved via the [service container](/docs/container), so you may type-hint any dependencies you need within a composer's constructor.
 
 #### Attaching a Composer to Multiple Views
 

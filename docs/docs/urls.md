@@ -34,7 +34,7 @@ echo url()->full();
 echo url()->previous();
 ```
 
-Each of these methods may also be accessed via the `URL` [facade](/docs/facades.html):
+Each of these methods may also be accessed via the `URL` [facade](/docs/facades):
 
 ```php
 use SwooleTW\Hyperf\Support\Facades\URL;
@@ -44,7 +44,7 @@ echo URL::current();
 
 ## URLs for Named Routes
 
-The `route` helper may be used to generate URLs to [named routes](/docs/routing.html#named-routes). Named routes allow you to generate URLs without being coupled to the actual URL defined on the route. Therefore, if the route's URL changes, no changes need to be made to your calls to the `route` function. For example, imagine your application contains a route defined like the following:
+The `route` helper may be used to generate URLs to [named routes](/docs/routing#named-routes). Named routes allow you to generate URLs without being coupled to the actual URL defined on the route. Therefore, if the route's URL changes, no changes need to be made to your calls to the `route` function. For example, imagine your application contains a route defined like the following:
 
 ```php
 Route::get('/post/{post}', function (Post $post) {

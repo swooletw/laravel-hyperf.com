@@ -3,7 +3,7 @@
 
 ## Introduction
 
-Throughout the Laravel Hyperf documentation, you will see examples of code that interacts with Laravel Hyperf's features via "facades". Facades provide a "static" interface to classes that are available in the application's [service container](/docs/container.html). Laravel ships with many facades which provide access to almost all of Laravel Hyperf's features.
+Throughout the Laravel Hyperf documentation, you will see examples of code that interacts with Laravel Hyperf's features via "facades". Facades provide a "static" interface to classes that are available in the application's [service container](/docs/container). Laravel ships with many facades which provide access to almost all of Laravel Hyperf's features.
 
 Laravel Hyperf facades serve as "static proxies" to underlying classes in the service container, providing the benefit of a terse, expressive syntax while maintaining more testability and flexibility than traditional static methods. It's perfectly fine if you don't totally understand how facades work - just go with the flow and continue learning about Laravel.
 
@@ -22,7 +22,7 @@ Throughout the Laravel Hyperf documentation, many of the examples will use facad
 
 #### Helper Functions
 
-To complement facades, Laravel Hyperf offers a variety of global "helper functions" that make it even easier to interact with common Laravel features. Some of the common helper functions you may interact with are `view`, `response`, `url`, `config`, and more. Each helper function offered by Laravel is documented with their corresponding feature; however, a complete list is available within the dedicated [helper documentation](/docs/helpers.html).
+To complement facades, Laravel Hyperf offers a variety of global "helper functions" that make it even easier to interact with common Laravel features. Some of the common helper functions you may interact with are `view`, `response`, `url`, `config`, and more. Each helper function offered by Laravel is documented with their corresponding feature; however, a complete list is available within the dedicated [helper documentation](/docs/helpers).
 
 For example, instead of using the `SwooleTW\Hyperf\Support\Facades\Response` facade to generate a JSON response, we may simply use the `response` function. Because helper functions are globally available, you do not need to import any classes in order to use them:
 
@@ -168,11 +168,11 @@ class Cache extends Facade
 }
 ```
 
-Instead, the `Cache` facade extends the base `Facade` class and defines the method `getFacadeAccessor()`. This method's job is to return the name of a service container binding. When a user references any static method on the `Cache` facade, Laravel Hyperf resolves the `cache` binding from the [service container](/docs/container.html) and runs the requested method (in this case, `get`) against that object.
+Instead, the `Cache` facade extends the base `Facade` class and defines the method `getFacadeAccessor()`. This method's job is to return the name of a service container binding. When a user references any static method on the `Cache` facade, Laravel Hyperf resolves the `cache` binding from the [service container](/docs/container) and runs the requested method (in this case, `get`) against that object.
 
 ## Facade Class Reference
 
-Below you will find every facade and its underlying class. This is a useful tool for quickly digging into the API documentation for a given facade root. The [service container binding](/docs/container.html) key is also included where applicable.
+Below you will find every facade and its underlying class. This is a useful tool for quickly digging into the API documentation for a given facade root. The [service container binding](/docs/container) key is also included where applicable.
 
 Facade  |  Class  |  Service Container Binding
 ------------- | ------------- | -------------
