@@ -19,10 +19,10 @@ export default defineUserConfig({
   plugins: [
     seoPlugin({
       hostname: 'https://laravel-hyperf.com',
-      fallBackImage: 'logo.svg',
+      fallBackImage: '/logo.svg',
       ogp: (ogp, page) => ({
         ...ogp,
-        'og:site_name': 'Laravel Hyperf - The Laravel Style Hyperf Framework For Web Artisans',
+        'og:title': 'Laravel Hyperf - The Laravel Style Hyperf Framework For Web Artisans',
         'og:description': "Laravel Hyperf is a PHP framework which aims to help Laravel artisans enjoy the high performance of Hyperf while maintaining familiar Laravel development practices.",
       }),
     }),
