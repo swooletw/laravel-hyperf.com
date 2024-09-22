@@ -6,6 +6,7 @@ import { redirectPlugin } from '@vuepress/plugin-redirect'
 import { docsearchPlugin } from '@vuepress/plugin-docsearch'
 import { sidebarConfig } from './sidebar.js'
 import { removeHtmlExtensionPlugin } from 'vuepress-plugin-remove-html-extension'
+import { seoPlugin } from '@vuepress/plugin-seo'
 
 export default defineUserConfig({
   lang: 'en-US',
@@ -16,6 +17,15 @@ export default defineUserConfig({
   bundler: viteBundler(),
 
   plugins: [
+    seoPlugin({
+      hostname: 'https://laravel-hyperf.com',
+      fallBackImage: 'logo.svg',
+      ogp: (ogp, page) => ({
+        ...ogp,
+        'og:site_name': 'Laravel Hyperf - The Laravel Style Hyperf Framework For Web Artisans',
+        'og:description': "Laravel Hyperf is a PHP framework which aims to help Laravel artisans enjoy the high performance of Hyperf while maintaining familiar Laravel development practices.",
+      }),
+    }),
     removeHtmlExtensionPlugin(),
     mdEnhancePlugin({
       hint: true,
