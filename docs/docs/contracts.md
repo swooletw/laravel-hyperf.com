@@ -1,3 +1,6 @@
+# Contracts
+[[toc]]
+
 ## Introduction
 
 Laravel Hyperf's "contracts" are a set of interfaces that define the core services provided by the framework. For example, an `SwooleTW\Hyperf\Auth\Contracts\Gate` contract defines the methods needed for authorizing a resource, while the `SwooleTW\Hyperf\Hashing\Contracts\Hasher` contract defines the methods needed for generating a secure hash.
