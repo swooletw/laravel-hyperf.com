@@ -192,6 +192,26 @@ Cache::flush();
 Flushing the cache does not respect your configured cache "prefix" and will remove all entries from the cache. Consider this carefully when clearing a cache which is shared by other applications.
 :::
 
+### Building Cache Stacks
+
+Laravel Hyperf provides multi-layer caching architecture. The `stack` driver allows you to combine multiple cache layers for ultra performance. To illustrate how to use cache stacks, let's take a look at an example configuration that you might see in a production application:
+
+```php
+'stack' => [
+    'driver' => 'stack',
+    'stores' => [
+        'swoole' => [
+            'ttl' => 3, // seconds
+        ],
+        'redis',
+    ],
+],
+```
+
+Let's dissect this configuration. First, notice our `stack` aggregates two other cache drivers via its option: `swoole` and `redis`. Consequently, when caching data, both of these cache drivers will be invoked sequentially. The `ttl` option can specify the Time to Live (TTL) for each driver.
+
+In this configuration, if there's a cache hit in the `swoole` layer, the data will be returned immediately, and the `redis` cache will not be queried. However, if there's a cache miss in the `swoole` layer, the stack driver will proceed to check subsequent drivers to determine if the cache exists in those layers. Should a cache hit occur in the `redis` driver, the data will be returned from that layer and simultaneously cached in the `swoole` driver for future use.
+
 ### The Cache Helper
 
 In addition to using the `Cache` facade, you may also use the global `cache` function to retrieve and store data via the cache. When the `cache` function is called with a single, string argument, it will return the value of the given key:
