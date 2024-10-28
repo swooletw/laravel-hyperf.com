@@ -182,9 +182,9 @@ return response()->streamDownload(function () {
 In large data processing, you should chunk your output to avoid memory overflow. In this case, you can use the `write` method to write the data to the response:
 
 ```php
-use SwooleTW\Hyperf\Http\Response;
+use SwooleTW\Hyperf\Http\StreamOutput;
 
-return response()->streamDownload(function (Response $response) {
+return response()->streamDownload(function (StreamOutput $output) {
     $response->write('large-data-chunk-1');
     // ...
     $response->write('large-data-chunk-5');
@@ -193,12 +193,12 @@ return response()->streamDownload(function (Response $response) {
 
 #### Server Side Events
 
-The `stream` method may be used to stream a response to the client. This method is useful for streaming large data or for implementing server-side events. The `stream` method accepts a callback as its first argument, which will be called repeatedly to stream the response to the client. The callback will receive the response instance as its only argument:
+The `stream` method may be used to stream a response to the client. This method is useful for streaming large data or for implementing server-side events. The `stream` method accepts a callback as its first argument, which will be called repeatedly to stream the response to the client. The callback will receive the `StreamOutput` instance as its only argument:
 
 ```php
-use SwooleTW\Hyperf\Http\Response;
+use SwooleTW\Hyperf\Http\StreamOutput;
 
-return response()->stream(function (Response $response) {
+return response()->stream(function (StreamOutput $output) {
     $response->write('Hello World');
     // ...
     $response->write('Laravel Hyperf is awesome!');
