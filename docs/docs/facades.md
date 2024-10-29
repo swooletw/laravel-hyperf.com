@@ -202,6 +202,7 @@ Route  |  SwooleTW\Hyperf\Router\Router  |  `router`
 Schedule  |  SwooleTW\Hyperf\Foundation\Console\Contracts\Schedule  |  `schedule`
 Schema  |  SwooleTW\Hyperf\Database\Schema\SchemaProxy  |  `db.schema`
 Session  |  Hyperf\Contract\SessionInterface  |  `session`
+Storage  |  SwooleTW\Hyperf\Filesystem\Contracts\Factory  |  `filesystem`
 URL  |  SwooleTW\Hyperf\Router\UrlGenerator  |  `url`
 Validator  |  Hyperf\Validation\Contract\ValidatorFactoryInterface  |  `validator`
 View  |  Hyperf\View\RenderInterface  |  `view`
