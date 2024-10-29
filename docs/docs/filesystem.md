@@ -1,6 +1,6 @@
 ## Introduction
 
-Laravel Hyperf provides a powerful filesystem abstraction thanks to the wonderful [Flysystem](https://github.com/thephpleague/flysystem) PHP package by Frank de Jonge. The Laravel Flysystem integration provides simple drivers for working with local filesystems, SFTP, Amazon S3 and Google Cloud Storage. Even better, it's amazingly simple to switch between these storage options between your local development machine and production server as the API remains the same for each system.
+Laravel Hyperf provides a powerful filesystem abstraction thanks to the wonderful [Flysystem](https://github.com/thephpleague/flysystem) PHP package by Frank de Jonge. The Laravel Hyperf Flysystem integration provides simple drivers for working with local filesystems, SFTP, Amazon S3 and Google Cloud Storage. Even better, it's amazingly simple to switch between these storage options between your local development machine and production server as the API remains the same for each system.
 
 ## Configuration
 
@@ -509,7 +509,7 @@ $path = Storage::putFileAs(
 ```
 
 ::: warning
-Unprintable and invalid unicode characters will automatically be removed from file paths. Therefore, you may wish to sanitize your file paths before passing them to Laravel's file storage methods. File paths are normalized using the `League\Flysystem\WhitespacePathNormalizer::normalizePath` method.
+Unprintable and invalid unicode characters will automatically be removed from file paths. Therefore, you may wish to sanitize your file paths before passing them to Laravel Hyperf's file storage methods. File paths are normalized using the `League\Flysystem\WhitespacePathNormalizer::normalizePath` method.
 :::
 
 
@@ -712,7 +712,7 @@ The `image` method requires the [GD extension](https://www.php.net/manual/en/boo
 
 ## Custom Filesystems
 
-Laravel Hyperf's Flysystem integration provides support for several "drivers" out of the box; however, Flysystem is not limited to these and has adapters for many other storage systems. You can create a custom driver if you want to use one of these additional adapters in your Laravel application.
+Laravel Hyperf's Flysystem integration provides support for several "drivers" out of the box; however, Flysystem is not limited to these and has adapters for many other storage systems. You can create a custom driver if you want to use one of these additional adapters in your Laravel Hyperf application.
 
 In order to define a custom filesystem you will need a Flysystem adapter. Let's add a community maintained Dropbox adapter to our project:
 
