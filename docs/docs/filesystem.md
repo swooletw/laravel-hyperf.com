@@ -43,6 +43,10 @@ Laravel Hyperf provides an elegant way to create object pools for your disk driv
 
 You will get a `RuntimeException` if your driver instances exceeds the `max_objects` in the config while handling concurrent requests. You should configure these values according to your needs.
 
+::: note
+Pool config is not supported in `ftp`, `sftp` and `local` drivers. They are coroutine-safe with singletons.
+:::
+
 ### Driver Prerequisites
 
 #### S3 Driver Configuration
