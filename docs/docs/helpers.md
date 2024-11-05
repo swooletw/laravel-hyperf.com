@@ -1208,7 +1208,7 @@ $last = last($array);
 The `Number::abbreviate` method returns the human-readable format of the provided numerical value, with an abbreviation for the units:
 
 ```php
-use Illuminate\Support\Number;
+use SwooleTW\Hyperf\Support\Number;
 
 $number = Number::abbreviate(1000);
 
@@ -1229,7 +1229,7 @@ $number = Number::abbreviate(1230000, precision: 2);
 The `Number::clamp` method ensures a given number stays within a specified range. If the number is lower than the minimum, the minimum value is returned. If the number is higher than the maximum, the maximum value is returned:
 
 ```php
-use Illuminate\Support\Number;
+use SwooleTW\Hyperf\Support\Number;
 
 $number = Number::clamp(105, min: 10, max: 100);
 
@@ -1254,7 +1254,7 @@ $number = Number::clamp(20, min: 10, max: 100);
 The `Number::currency` method returns the currency representation of the given value as a string:
 
 ```php
-use Illuminate\Support\Number;
+use SwooleTW\Hyperf\Support\Number;
 
 $currency = Number::currency(1000);
 
@@ -1275,7 +1275,7 @@ $currency = Number::currency(1000, in: 'EUR', locale: 'de');
 The `Number::fileSize` method returns the file size representation of the given byte value as a string:
 
 ```php
-use Illuminate\Support\Number;
+use SwooleTW\Hyperf\Support\Number;
 
 $size = Number::fileSize(1024);
 
@@ -1296,7 +1296,7 @@ $size = Number::fileSize(1024, precision: 2);
 The `Number::forHumans` method returns the human-readable format of the provided numerical value:
 
 ```php
-use Illuminate\Support\Number;
+use SwooleTW\Hyperf\Support\Number;
 
 $number = Number::forHumans(1000);
 
@@ -1317,7 +1317,7 @@ $number = Number::forHumans(1230000, precision: 2);
 The `Number::format` method formats the given number into a locale specific string:
 
 ```php
-use Illuminate\Support\Number;
+use SwooleTW\Hyperf\Support\Number;
 
 $number = Number::format(100000);
 
@@ -1342,7 +1342,7 @@ $number = Number::format(100000, locale: 'de');
 The `Number::ordinal` method returns a number's ordinal representation:
 
 ```php
-use Illuminate\Support\Number;
+use SwooleTW\Hyperf\Support\Number;
 
 $number = Number::ordinal(1);
 
@@ -1363,7 +1363,7 @@ $number = Number::ordinal(21);
 The `Number::percentage` method returns the percentage representation of the given value as a string:
 
 ```php
-use Illuminate\Support\Number;
+use SwooleTW\Hyperf\Support\Number;
 
 $percentage = Number::percentage(10);
 
@@ -1388,7 +1388,7 @@ $percentage = Number::percentage(10, precision: 2, locale: 'de');
 The `Number::spell` method transforms the given number into a string of words:
 
 ```php
-use Illuminate\Support\Number;
+use SwooleTW\Hyperf\Support\Number;
 
 $number = Number::spell(102);
 
@@ -1429,7 +1429,7 @@ $number = Number::spell(10, until: 10);
 The `Number::useLocale` method sets the default number locale globally, which affects how numbers and currency are formatted by subsequent invocations to the `Number` class's methods:
 
 ```php
-use Illuminate\Support\Number;
+use SwooleTW\Hyperf\Support\Number;
 
 /**
  * Bootstrap any application services.
@@ -1446,7 +1446,7 @@ public function boot(): void
 The `Number::withLocale` method executes the given closure using the specified locale and then restores the original locale after the callback has executed:
 
 ```php
-use Illuminate\Support\Number;
+use SwooleTW\Hyperf\Support\Number;
 
 $number = Number::withLocale('de', function () {
     return Number::format(1500);
