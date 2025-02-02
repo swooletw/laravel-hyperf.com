@@ -73,7 +73,7 @@ Route::get('/users', function (Request $request) {
 The `route:list` Artisan command can easily provide an overview of all of the routes that are defined by your application:
 
 ```shell
-php hyperf route:list
+php artisan route:list
 ```
 
 You may also instruct Laravel Hyperf to only show routes that begin with a given URI:

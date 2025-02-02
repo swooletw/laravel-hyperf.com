@@ -31,13 +31,13 @@ Once the project has been created, start Laravel Hyperf's local development serv
 ```shell:no-line-numbers
 cd example-app
 
-php hyperf serve
+php artisan serve
 ```
 
 Because all the files will be kept in the memory after running, you need to restart server after you make file changes. In development, you can use hot reload command:
 
 ```shell:no-line-numbers
-php hyperf server:watch
+php artisan server:watch
 ```
 ::: tip
 Laravel Hyperf provides `artisan` as an alias for the command entry point. You can use `php artisan {command}` to execute your commands, just like in Laravel.
@@ -91,7 +91,7 @@ DB_PASSWORD=
 If you choose to use a database other than SQLite, you will need to create the database and run your application's [database migrations](/docs/migrations):
 
 ```shell:no-line-numbers
-php hyperf migrate
+php artisan migrate
 ```
 
 ## Developing with Docker
