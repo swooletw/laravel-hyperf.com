@@ -3,16 +3,10 @@
 
 ## Introduction
 
-Artisan is the command line interface included with Laravel Hyperf. Artisan exists at the root of your application as the alias of `hyperf` script and provides a number of helpful commands that can assist you while you build your application. To view a list of all available Artisan commands, you may use the `list` command:
+Artisan is the command line interface included with Laravel Hyperf. Artisan exists at the root of your application as the `artisan` script and provides a number of helpful commands that can assist you while you build your application. To view a list of all available Artisan commands, you may use the `list` command:
 
 ```shell:no-line-numbers
 php artisan list
-```
-
-You can also use the `hyperf` command to execute Artisan commands:
-
-```shell:no-line-numbers
-php hyperf list
 ```
 
 Every command also includes a "help" screen which displays and describes the command's available arguments and options. To view a help screen, precede the name of the command with `help`:
